@@ -1,15 +1,16 @@
 /* eslint-disable react/react-in-jsx-scope */
-import { Switch, Route } from "react-router-dom";
-import { JournalScreen } from "../components/journal/JournalScreen";
-import React from "react";
-import { Redirect } from "react-router-dom";
-const DashboardRouter = () => {
-  return (
-    <Switch>
-      <Route exact path="/" component={JournalScreen} />
-      <Redirect to="/"/>
-    </Switch>
-  );
-};
+import {Switch, Route} from 'react-router-dom'
+import React from 'react'
+import {Redirect} from 'react-router-dom'
 
-export default DashboardRouter;
+import Game from '../pages/game'
+const DashboardRouter = () => {
+	return (
+		<Switch>
+			<Route exact path='/game' component={Game} />
+			<Redirect to='/game' />
+		</Switch>
+	)
+}
+
+export default DashboardRouter
