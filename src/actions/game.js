@@ -20,6 +20,14 @@ export const playersValidate = async (alias1, alias2, players, dispatch) => {
 		)
 		return false
 	}
+	if (alias1 === alias2) {
+		Swal.fire(
+			'Los usuarios no pueden ser iguales',
+			'No puede empezar la partida con el mismo jugador',
+			'error'
+		)
+		return false
+	}
 	dispatch(
 		starGame({
 			player1: alias1Exist,
