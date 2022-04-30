@@ -72,6 +72,71 @@
 	}
 }
 
+.container__score-board {
+	margin: 1rem 0;
+	border: 0.15rem solid transparent; //Creas el borde
+	width: 100%;
+	padding: 1rem 2rem;
+	border-image: linear-gradient(to bottom, $secondary 0%, $primary 100%) 1;
+	h4 {
+		font-size: 1.3rem;
+		margin-bottom: 0.4rem;
+		color: #1a1919;
+	}
+	hr {
+		color: $primary;
+	}
+	p.winner {
+		font-weight: 600;
+		margin-top: 1rem;
+		font-size: 1.1rem;
+		text-align: center;
+		color: $secondary;
+	}
+	.option {
+		margin-top: 1rem;
+		display: flex;
+		gap: 1rem;
+
+		.fieldset-1,
+		.fieldset-2 {
+			width: 100%;
+			padding: 0.5rem;
+			legend {
+				padding: 0 0.2rem;
+			}
+		}
+
+		div {
+			display: flex;
+			align-items: flex-end;
+			justify-content: center;
+			.score-1,
+			.score-2 {
+				font-weight: 700;
+				font-size: 1.8rem;
+				color: $primary;
+			}
+			.score-2 {
+				color: $secondary;
+			}
+			.pts {
+				font-style: oblique;
+				font-size: 0.75rem;
+			}
+		}
+
+		@media (max-width: 600px) {
+			flex-direction: column;
+		}
+	}
+	.container-btns {
+		display: flex;
+		justify-content: center;
+		margin: 1rem 0;
+		gap: 2rem;
+	}
+}
 // .board {
 // 	display: grid;
 // 	grid-template-columns: repeat(3, 1fr);

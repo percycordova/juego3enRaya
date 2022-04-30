@@ -8,6 +8,10 @@ const Game = () => {
 	//obtenemos los datos de los jugadores
 	const [{player1}, {player2}] = useSelector((state) => state.game)
 
+	const [user1, setUser1] = useState({...player1})
+	const [user2, setUser2] = useState({...player2})
+	console.log('este es el user 1', user1)
+	console.log('este es el user 2', user2)
 	//las combinaciones donde exisitira un ganador
 	const winningPositions = [
 		[0, 1, 2],
@@ -19,11 +23,22 @@ const Game = () => {
 		[0, 4, 8],
 		[2, 4, 6]
 	]
+	//opcion para elegir el simbolo
 	const [option, setOption] = useState('X')
+
+	//opcion para ver quien empieza primero
 	const [isFirst, setIsFirst] = useState(false)
+
+	//opcion para evaluar el turno
 	const [turn, setTurn] = useState(option)
+
+	//creamos un array de 9 posiciones que contendra mis celdas
 	const [squares, setSquares] = useState(Array(9).fill(null))
+
 	const [winningSquares, setWinningSquares] = useState([])
+
+	const [showScoreBoard, setShowScoreBoard] = useState(false)
+
 	const [score, setScore] = useState({
 		X: 0,
 		O: 0
@@ -32,9 +47,17 @@ const Game = () => {
 		setOption(e.target.value)
 	}
 	const reset = () => {
-		setTurn(option)
 		setSquares(Array(9).fill(null))
 		setWinningSquares([])
+		setShowScoreBoard(false)
+		setIsFirst(false)
+		document.getElementById('first').checked = false
+		setOption('X')
+		setTurn(option)
+		setScore({
+			X: 0,
+			O: 0
+		})
 	}
 
 	const checkForWinner = (newSquares) => {
@@ -69,13 +92,26 @@ const Game = () => {
 		if (result !== null) {
 			setScore({
 				...score,
-				[result]: score[result] + 1
+				[result]: score[result] + 100
 			})
 		}
 		setWinningSquares(winningPositions)
-		setTimeout(reset, 2000)
+		setShowScoreBoard(true)
+		// setTimeout(() => reset(), 2000)
 	}
 
+	//aca seteamo mis usuario
+	useEffect(() => {
+		if (option === 'X') {
+			setUser1({...player1, score: score.X})
+			setUser2({...player2, score: score.O})
+		} else {
+			setUser1({...player1, score: score.O})
+			setUser2({...player2, score: score.X})
+		}
+	}, [score, option, player1, player2])
+
+	//aca valido quien empieza el turno
 	useEffect(() => {
 		if (isFirst) {
 			if (option === 'X') {
@@ -107,7 +143,10 @@ const Game = () => {
 				squares={squares}
 				onClick={handleClick}
 			/>
-			<ScoreBoard scoreO={score.O} scoreX={score.X} />
+
+			{showScoreBoard && (
+				<ScoreBoard user1={user1} user2={user2} reset={reset} />
+			)}
 		</div>
 	)
 }
