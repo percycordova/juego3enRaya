@@ -1,10 +1,72 @@
 .container {
+	padding: 0 0.5rem;
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
+	// justify-content: center;
+	padding-top: 1rem;
 	align-items: center;
 	height: 100vh;
-	background-color: #22333b;
+	max-width: 500px;
+	margin: 0 auto;
+	// background-color: #22333b;
+	// border: 1px solid black
+	h2 {
+		color: $primary;
+	}
+	.container__options {
+		margin: 1rem 0;
+		border: 0.15rem solid transparent; //Creas el borde
+		width: 100%;
+		padding: 1rem 2rem;
+		border-image: linear-gradient(to bottom, $primary 0%, $secondary 100%) 1;
+		h4 {
+			font-size: 1.3rem;
+			margin-bottom: 0.4rem;
+			color: #1a1919;
+		}
+		hr {
+			color: $primary;
+		}
+		.option {
+			margin-top: 1rem;
+			display: flex;
+			gap: 1rem;
+			label {
+				font-size: 0.8rem;
+				color: rgb(37, 36, 36);
+			}
+			select {
+				margin-top: 0.3rem;
+				width: 90%;
+				padding: 0.2rem 50%;
+				cursor: pointer;
+			}
+			fieldset {
+				width: 100%;
+				padding: 0.5rem;
+				legend {
+					padding: 0 0.2rem;
+				}
+			}
+			.option-default {
+				padding: 0;
+				display: flex;
+				align-items: center;
+				p {
+					font-size: 0.8rem;
+					color: rgb(37, 36, 36);
+				}
+				div {
+					font-weight: bold;
+					margin-left: 1rem;
+				}
+			}
+
+			@media (max-width: 600px) {
+				flex-direction: column;
+			}
+		}
+	}
 }
 
 // .board {

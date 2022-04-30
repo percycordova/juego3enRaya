@@ -1,13 +1,8 @@
 const Cell = ({value, onClick, turn, winner}) => {
+	console.log(value)
 	const handleClick = () => {
 		turn !== null && value === null && onClick()
 	}
-
-	// let squareClass = classNames({
-	//     square: true,
-	//     [`square--${value}`]: value !== null,
-	//     winner: winner,
-	// });
 
 	return (
 		<div
