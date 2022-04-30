@@ -20,6 +20,7 @@ const Game = () => {
 		[2, 4, 6]
 	]
 	const [option, setOption] = useState('X')
+	const [isFirst, setIsFirst] = useState(false)
 	const [turn, setTurn] = useState(option)
 	const [squares, setSquares] = useState(Array(9).fill(null))
 	const [winningSquares, setWinningSquares] = useState([])
@@ -76,8 +77,16 @@ const Game = () => {
 	}
 
 	useEffect(() => {
-		setTurn(option)
-	}, [option])
+		if (isFirst) {
+			if (option === 'X') {
+				setTurn('O')
+			} else {
+				setTurn('X')
+			}
+		} else {
+			setTurn(option)
+		}
+	}, [option, isFirst])
 	return (
 		<div className='container'>
 			<h2>A DIVERTIRSE</h2>
@@ -88,6 +97,8 @@ const Game = () => {
 				player1={player1}
 				player2={player2}
 				option={option}
+				isFirst={isFirst}
+				setIsFirst={setIsFirst}
 			/>
 
 			<Board
