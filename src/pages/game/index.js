@@ -72,8 +72,8 @@ const Game = () => {
 	return (
 		<div className='container'>
 			<h2>Que gane el mejor</h2>
-			<p>Jugador 1: {player1}</p>
-			<p>Jugador 2: {player2}</p>
+			<p>Jugador 1: {player1.alias}</p>
+			<p>Jugador 2: {player2.alias}</p>
 			<Board
 				winningSquares={winningSquares}
 				turn={turn}

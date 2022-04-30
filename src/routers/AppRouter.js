@@ -8,7 +8,6 @@ import {useSelector} from 'react-redux'
 
 export const AppRouter = () => {
 	const {isAuthenticated} = useSelector((state) => state.auth)
-	const isTrue = true
 
 	return (
 		<Router>
