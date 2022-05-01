@@ -10,8 +10,7 @@ const Game = () => {
 
 	const [user1, setUser1] = useState({...player1})
 	const [user2, setUser2] = useState({...player2})
-	console.log('este es el user 1', user1)
-	console.log('este es el user 2', user2)
+
 	//las combinaciones donde exisitira un ganador
 	const winningPositions = [
 		[0, 1, 2],
@@ -39,6 +38,8 @@ const Game = () => {
 
 	const [showScoreBoard, setShowScoreBoard] = useState(false)
 
+	const [showBoard, setShowBoard] = useState(false)
+
 	const [score, setScore] = useState({
 		X: 0,
 		O: 0
@@ -52,6 +53,7 @@ const Game = () => {
 		setShowScoreBoard(false)
 		setIsFirst(false)
 		document.getElementById('first').checked = false
+		setShowBoard(false)
 		setOption('X')
 		setTurn(option)
 		setScore({
@@ -133,16 +135,19 @@ const Game = () => {
 				player1={player1}
 				player2={player2}
 				option={option}
+				showBoard={showBoard}
 				isFirst={isFirst}
 				setIsFirst={setIsFirst}
+				setShowBoard={setShowBoard}
 			/>
-
-			<Board
-				winningSquares={winningSquares}
-				turn={turn}
-				squares={squares}
-				onClick={handleClick}
-			/>
+			{showBoard && (
+				<Board
+					winningSquares={winningSquares}
+					turn={turn}
+					squares={squares}
+					onClick={handleClick}
+				/>
+			)}
 
 			{showScoreBoard && (
 				<ScoreBoard user1={user1} user2={user2} reset={reset} />

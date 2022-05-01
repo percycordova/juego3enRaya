@@ -5,6 +5,7 @@ import {useDispatch, useSelector} from 'react-redux'
 import {playersValidate} from '../../actions/game'
 import Swal from 'sweetalert2'
 import {login} from '../../actions/auth'
+import registerIcon from '../../assets/checkmark.png'
 
 const initialForm = {
 	aliasPlayer1: '',
@@ -107,11 +108,13 @@ const Home = () => {
 					)}
 				</div>
 				<div className='homer__form-button'>
-					<div type='button' className='button-secondary' onClick={starGame}>
-						Comenzar
+					<div type='button' className='button-primary' onClick={starGame}>
+						<img src={registerIcon} alt='' />
+						Ir al juego
 					</div>
-					<div className='button-primary' onClick={redirectRegister}>
-						Registrar jugador
+					<div className='register'>
+						<p>Primera vez en el juego?</p>
+						<p onClick={redirectRegister}>Registrese</p>
 					</div>
 				</div>
 			</form>

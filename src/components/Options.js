@@ -1,12 +1,14 @@
 import React from 'react'
-
+import fightIcon from '../assets/swords.png'
 const Options = ({
 	player1,
 	player2,
 	option,
 	handleOption,
+	showBoard,
 	isFirst,
-	setIsFirst
+	setIsFirst,
+	setShowBoard
 }) => {
 	return (
 		<div className='container__options'>
@@ -35,6 +37,7 @@ const Options = ({
 								type='checkbox'
 								id='first'
 								name='first'
+								disabled={showBoard}
 								onChange={(e) => {
 									setIsFirst(e.target.checked)
 								}}
@@ -43,6 +46,17 @@ const Options = ({
 					</div>
 				</fieldset>
 			</div>
+			<button
+				className='button button-primary'
+				onClick={() => setShowBoard(true)}
+			>
+				<img
+					src={fightIcon}
+					alt=''
+					style={{objectFit: 'cover', height: '28px', width: '30px'}}
+				/>
+				Empezar Partida
+			</button>
 		</div>
 	)
 }

@@ -3,13 +3,19 @@
 	padding-top: 2rem;
 	margin: 2rem auto;
 	padding-bottom: 2rem;
+
+	@media (max-width: 600px) {
+		.home__title {
+			font-size: 1.4rem;
+		}
+	}
 }
 .home__title,
 .home__subtitle {
-	font-size: 2em;
+	font-size: 1.8em;
 	text-align: center;
-	font-weight: 500;
-	color: $primary;
+	font-weight: bold;
+	color: $text-color;
 }
 .home__subtitle {
 	font-size: 1.2em;
@@ -19,25 +25,41 @@
 .home__form {
 	padding: 1rem;
 	.homer__form-button {
-		margin-top: 1.5rem;
+		width: 100%;
+
+		margin-top: 2rem;
 		display: flex;
+		flex-direction: column;
 		justify-content: center;
 		align-items: center;
 		gap: 1rem;
+		.register {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			gap: 1rem;
+			color: #24292f;
+			width: 100%;
+			:nth-child(2) {
+				border-bottom: 1px solid black;
+				cursor: pointer;
+			}
+		}
 	}
 }
 .home__content-input {
 	display: flex;
 	flex-direction: column;
-	grid-gap: 1rem;
+	grid-gap: 1.5rem;
 	margin-top: 2.5rem;
 	width: 100%;
+	position: relative;
 
 	span {
 		padding: 0.3rem 0.5rem;
 		font-size: 1rem;
 		border-radius: 100px;
-		background: white;
+		background: #edf7f6;
 	}
 }
 
@@ -48,7 +70,7 @@
 .home__content-input__wrap input {
 	width: 100%;
 	height: 3.5rem;
-	border: 2px solid $secondary;
+	border: 1.5px solid $primary;
 	background-color: transparent;
 	border-radius: 10px;
 	outline: none;
@@ -60,7 +82,7 @@
 }
 
 .home__content-input__wrap input:focus {
-	border: 2px solid $primary;
+	border: 1.5px solid $secondary;
 }
 
 .home__content-input__wrap label {
@@ -87,5 +109,5 @@
 }
 
 .border-error {
-	border: 2px solid red !important;
+	border: 1.5px solid #f86f6f !important;
 }

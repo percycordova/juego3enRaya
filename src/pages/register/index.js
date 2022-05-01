@@ -4,6 +4,8 @@ import {useHistory} from 'react-router-dom'
 import Swal from 'sweetalert2'
 import {playerValidate} from '../../actions/players'
 import useForm from '../../hooks/UseForm'
+import registerUser from '../../assets/add-friend.png'
+import returnIcon from '../../assets/back.png'
 
 const initialForm = {
 	name: '',
@@ -98,10 +100,16 @@ const Register = () => {
 					{errors.alias && <span className='msg-error'>{errors.alias}</span>}
 				</div>
 				<div className='homer__form-button'>
-					<div className='button-secondary' onClick={handleRegister}>
+					<div className='button-primary' onClick={handleRegister}>
+						<img src={registerUser} alt='' />
 						Registrar
 					</div>
-					<div type='button' className='button-primary' onClick={redirectHome}>
+					<div
+						type='button'
+						className='button-secondary'
+						onClick={redirectHome}
+					>
+						<img src={returnIcon} alt='' />
 						Volver
 					</div>
 				</div>

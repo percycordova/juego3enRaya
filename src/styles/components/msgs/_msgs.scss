@@ -1,7 +1,7 @@
 .msg-error {
-	color: red;
-	display: flex;
-	justify-content: center;
-	margin-top: -0.8rem;
-	font-size: 0.9rem;
+	position: absolute;
+	color: #f86f6f;
+	bottom: -1.5rem;
+	font-size: 0.85rem !important;
+	background: transparent !important;
 }
