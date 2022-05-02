@@ -65,8 +65,10 @@ const Home = () => {
 	}
 
 	return (
-		<div className='home'>
-			<h2 className='home__title'>Bienvenidos al juego 3 en raya</h2>
+		<div className='home animate__animated animate__fadeIn '>
+			<h2 className='home__title animate__animated animate__delay-1s animate__bounce'>
+				Bienvenidos al juego 3 en raya
+			</h2>
 			<h4 className='home__subtitle'>(Modo multijugador)</h4>
 			<form action='' className='home__form'>
 				<div className='home__content-input'>

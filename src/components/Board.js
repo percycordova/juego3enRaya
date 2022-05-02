@@ -6,14 +6,16 @@ const Board = ({squares, onClick, turn, winningSquares}) => {
 			<Cell
 				winner={winningSquares.includes(value)}
 				turn={turn}
-				onClick={() => onClick(value)}
+				onClick={() => {
+					onClick(value)
+				}}
 				value={squares[value]}
 				key={`square_${value}`}
 			/>
 		))
 
 	return (
-		<div className='board'>
+		<div className='board animate__animated animate__shakeX'>
 			<div className='row'>{createSquares([0, 1, 2])}</div>
 			<div className='row'>{createSquares([3, 4, 5])}</div>
 			<div className='row'>{createSquares([6, 7, 8])}</div>

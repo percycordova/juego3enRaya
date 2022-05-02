@@ -62,7 +62,7 @@ const Register = () => {
 		}
 	}
 	return (
-		<div className='home'>
+		<div className='home animate__animated animate__fadeIn '>
 			<h2 className='home__title'>Registro de jugador</h2>
 			<form action='' className='home__form'>
 				<div className='home__content-input'>
@@ -104,11 +104,7 @@ const Register = () => {
 						<img src={registerUser} alt='' />
 						Registrar
 					</div>
-					<div
-						type='button'
-						className='button-secondary'
-						onClick={redirectHome}
-					>
+					<div className='button-secondary' onClick={redirectHome}>
 						<img src={returnIcon} alt='' />
 						Volver
 					</div>

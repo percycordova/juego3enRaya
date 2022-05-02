@@ -18,7 +18,13 @@ const Options = ({
 				<fieldset>
 					<legend>{player1.alias}</legend>
 					<label htmlFor=''>Seleccione un símbolo</label>
-					<select name='' id='' value={option} onChange={handleOption}>
+					<select
+						name=''
+						id=''
+						value={option}
+						onChange={handleOption}
+						disabled={showBoard}
+					>
 						<option value='X'>X</option>
 						<option value='O'>O</option>
 					</select>
@@ -46,17 +52,19 @@ const Options = ({
 					</div>
 				</fieldset>
 			</div>
-			<button
-				className='button button-primary'
-				onClick={() => setShowBoard(true)}
-			>
-				<img
-					src={fightIcon}
-					alt=''
-					style={{objectFit: 'cover', height: '28px', width: '30px'}}
-				/>
-				Empezar Partida
-			</button>
+			{!showBoard && (
+				<button
+					className='button button-primary'
+					onClick={() => setShowBoard(true)}
+				>
+					<img
+						src={fightIcon}
+						alt=''
+						style={{objectFit: 'cover', height: '28px', width: '30px'}}
+					/>
+					Empezar Partida
+				</button>
+			)}
 		</div>
 	)
 }

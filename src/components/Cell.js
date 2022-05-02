@@ -1,5 +1,4 @@
 const Cell = ({value, onClick, turn, winner}) => {
-	console.log(value)
 	const handleClick = () => {
 		turn !== null && value === null && onClick()
 	}

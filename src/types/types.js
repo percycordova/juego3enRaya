@@ -3,6 +3,7 @@ export const types = {
 	logout: '[auth] logout',
 
 	playersRegister: '[players] register',
+	playersSaveScore: '[players] saveScorePlayer',
 
 	gameStar: '[game] starGame'
 }

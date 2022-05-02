@@ -21,6 +21,11 @@ export const playersReducer = (state = initialState, actions) => {
 			}
 		}
 
+		case types.playersSaveScore:
+			return {
+				players: actions.payload
+			}
+
 		default:
 			return state
 	}

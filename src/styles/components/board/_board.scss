@@ -12,6 +12,24 @@
 	h2 {
 		color: $text-color;
 	}
+	.game-rules {
+		width: 100%;
+		display: flex;
+		align-items: center;
+		justify-content: start;
+		gap: 0.5rem;
+		cursor: pointer;
+		font-size: 1rem;
+		margin-top: 0.8rem;
+		font-family: cursive;
+		font-weight: bolder;
+		&:hover {
+			color: $secondary;
+		}
+		@media (max-width: 600px) {
+			font-size: 0.85rem;
+		}
+	}
 	.container__options {
 		margin: 1rem 0;
 		border: 0.15rem solid $primary; //Creas el borde
@@ -34,7 +52,7 @@
 			select {
 				margin-top: 0.3rem;
 				width: 90%;
-				padding: 0.2rem 5rem;
+				padding: 0.2rem 1rem;
 				cursor: pointer;
 			}
 			fieldset {
@@ -134,7 +152,7 @@
 		margin: 1rem 0;
 		gap: 1rem;
 		@media (max-width: 600px) {
-			flex-direction: column;
+			flex-direction: column-reverse;
 		}
 	}
 }
@@ -254,5 +272,26 @@
 	}
 	100% {
 		border-radius: 50%;
+	}
+}
+
+.msg-play-rules {
+	text-align: start !important;
+	color: $text-color !important;
+	.criteria-title {
+		margin-top: 1.5rem !important;
+	}
+
+	.list-rules {
+		margin-top: 0.3rem;
+		font-size: 0.9rem !important;
+		margin-top: 0.5rem !important;
+		span {
+			font-weight: bold !important;
+			font-size: 1rem;
+		}
+		li {
+			margin-top: 0.5rem;
+		}
 	}
 }

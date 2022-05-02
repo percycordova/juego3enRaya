@@ -4,6 +4,7 @@ const initialState = {
 	game: localStorage.getItem('game')
 		? JSON.parse(localStorage.getItem('game'))
 		: []
+	//las combinaciones donde exisitira un ganador
 }
 
 export const gameReducer = (state = initialState, actions) => {
