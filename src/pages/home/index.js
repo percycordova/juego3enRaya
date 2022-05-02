@@ -51,14 +51,17 @@ const Home = () => {
 
 	const starGame = () => {
 		if (validateForm()) {
-			playersValidate(aliasPlayer1, aliasPlayer2, players, dispatch).then(
-				(resp) => {
-					if (resp) {
-						dispatch(login())
-						resetForm()
-					}
+			playersValidate(
+				aliasPlayer1.trim(),
+				aliasPlayer2.trim(),
+				players,
+				dispatch
+			).then((resp) => {
+				if (resp) {
+					dispatch(login())
+					resetForm()
 				}
-			)
+			})
 		} else {
 			Swal.fire('Error', 'Los datos son requeridos', 'error')
 		}

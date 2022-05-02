@@ -53,7 +53,7 @@ const Register = () => {
 	const handleRegister = (e) => {
 		e.preventDefault()
 		if (validateForm()) {
-			const player = {name, alias, score: 0}
+			const player = {name: name.trim(), alias: alias.trim(), score: 0}
 			playerValidate(player, players, dispatch).then((resp) => {
 				if (resp) resetForm()
 			})
