@@ -5,6 +5,7 @@ import rankingIcon from '../assets/ranking.png'
 import {useDispatch, useSelector} from 'react-redux'
 import {saveScorePlayer} from '../actions/game'
 import {useHistory} from 'react-router-dom'
+import {useEffect} from 'react'
 
 const ScoreBoard = ({user1, user2, reset}) => {
 	//obtenemos la lista de jugadores
@@ -21,8 +22,19 @@ const ScoreBoard = ({user1, user2, reset}) => {
 		}
 	}
 
+	useEffect(() => {
+		window.scrollTo({
+			left: 0,
+			top: document.body.scrollHeight,
+			behavior: 'smooth'
+		})
+	}, [])
+
 	return (
-		<div className='container__score-board board animate__animated animate__fadeInTopRight animate__delay-1s'>
+		<div
+			id='score-board'
+			className='container__score-board board animate__animated animate__fadeInTopRight animate__delay-1s'
+		>
 			<h4 className=''>Resultado de la partida</h4>
 			<hr className='' />
 			<div className='container-winner'>

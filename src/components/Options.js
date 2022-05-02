@@ -1,5 +1,5 @@
 import React from 'react'
-import fightIcon from '../assets/swords.png'
+import fightIcon from '../assets/guantes-de-boxeo.png'
 const Options = ({
 	player1,
 	player2,
@@ -11,7 +11,7 @@ const Options = ({
 	setShowBoard
 }) => {
 	return (
-		<div className='container__options'>
+		<div className='container__options animate__fadeInRight animate__animated animate__delay-1s'>
 			<h4 className=''>Opciones</h4>
 			<hr className='' />
 			<div className='option'>
@@ -60,7 +60,7 @@ const Options = ({
 					<img
 						src={fightIcon}
 						alt=''
-						style={{objectFit: 'cover', height: '28px', width: '30px'}}
+						style={{objectFit: 'cover', height: '30px', width: '36px'}}
 					/>
 					Empezar Partida
 				</button>

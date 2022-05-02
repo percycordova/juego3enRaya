@@ -5,7 +5,6 @@ import Board from '../../components/Board'
 import Options from '../../components/Options'
 import ScoreBoard from '../../components/ScoreBoard'
 import importIcon from '../../assets/importante.png'
-
 const winningPositions = [
 	[0, 1, 2],
 	[3, 4, 5],
@@ -19,9 +18,6 @@ const winningPositions = [
 const Game = () => {
 	//obtenemos los datos del juego
 	const [{player1}, {player2}] = useSelector((state) => state.game)
-
-	console.log(winningPositions, player1, player2)
-
 	const [user1, setUser1] = useState({...player1})
 	const [user2, setUser2] = useState({...player2})
 	//opcion para elegir el simbolo
@@ -94,11 +90,9 @@ const Game = () => {
 				[result]: scoringCriteria(squares, result)
 			})
 		}
-
 		setTurn(null)
 		setWinningSquares(winningPositions)
 		setShowScoreBoard(true)
-		// setTimeout(() => reset(), 2000)
 	}
 
 	//aca seteamos los usuarios usuario
@@ -128,9 +122,12 @@ const Game = () => {
 	return (
 		<div className='container animate__animated animate__fadeIn '>
 			<h2>A DIVERTIRSE</h2>
-			<div className='game-rules' onClick={() => gameRulesMensaje()}>
+			<div
+				className='game-rules animate__animated animate__shakeY animate__delay-1s'
+				onClick={() => gameRulesMensaje()}
+			>
 				<img src={importIcon} alt='' />
-				Leer las reglas y criterios de puntacion del juego
+				Leer las reglas del juego
 			</div>
 			<Options
 				handleOption={handleOption}
